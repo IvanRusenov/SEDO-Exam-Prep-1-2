@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage("Restore the dependencies"){
-            when {branch pattern: "(main|feature/.*)", comparator: "REGEXP"}
+            when { branch pattern: "(main|feature/.*)", comparator: "REGEXP" }
             steps{
                 bat "dotnet restore"
             }
